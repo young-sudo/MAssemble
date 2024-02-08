@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from Assembler import Assembler
+import argparse
+
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+
+def argument_parser():
+    """ Parsing command line arguments """
+    parser = argparse.ArgumentParser(
+        description="A script for de novo reads assembly.",
+        epilog="Enjoy :)"
+    )
+
+    # Positional arguments
+    parser.add_argument("reads", help="Path to the reads.fasta file")
+    parser.add_argument("output", help="Path to the output_contigs.txt file")
+
+    args = parser.parse_args()
+
+    reads_file = args.reads
+    output_file = args.output
+
+    return reads_file, output_file
+
+
+def main():
+    reads_file, output_file = argument_parser()
+
+    k = 17
+    d = 2
+
+    assembler = Assembler(k, d)
+
+    with open(reads_file) as handle:
+        for record in SeqIO.parse(handle, "fasta"):
+            read = str(record.seq)
+            assembler.count_kmers_from_read(read)
+
+    assembler.filter_dict_by_threshold()
+
+    # Seeds - kmers with top n values
+    n_top_vals = 3
+    top_values = sorted(set(assembler.kmer_counts.values()), reverse=True)[:n_top_vals]
+    seeds = {key for key, value in assembler.kmer_counts.items() if value in top_values}
+
+    candidates = set()
+
+    for seed in seeds:
+        sequence = assembler.extend_seed(seed, greedy=False)
+        # greedy algorithm shouldn't be used if there is a risk of a loop
+
+        if len(sequence) >= 300:
+            candidates.add(sequence)
+        
+    print(f"Seeds extended: {len(candidates)} contigs found")
+
+    with open(output_file, "w") as f:
+        # initialize an empty file
+        pass
+
+    i = 0
+    for sequence in candidates:
+        i += 1
+
+        header = f"contig_{i}"
+        record = SeqRecord(Seq(sequence), id=header, description="")
+
+        with open(output_file, "a") as output_handle:
+            SeqIO.write(record, output_handle, "fasta")
+
+    print(f"{i} contigs saved to file {output_file}")
+
+
+if __name__ == "__main__":
+    main()
