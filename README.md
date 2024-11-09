@@ -1,5 +1,5 @@
 # ASD-Projects
-**Algorithms for Sequencing Data**
+**Algorithms for Sequencing Data - an implementation of a basic mapping and assembly algorithm**
 
 Younginn Park
 
