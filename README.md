@@ -1,4 +1,4 @@
-# Assembler and Mapper
+# _MAssemble_ (Mapper and Assembler)
 
 **Algorithms for Sequencing Data - an implementation of a basic mapping and assembly algorithm for high-throughput sequencing data**
 
