@@ -8,8 +8,11 @@ Younginn Park
 
 Implements a basic read mapping algorithm that aligns high-throughput sequencing reads to a given reference genome, generating alignment information for each read.
 
-Usage
+**Usage**
 >`python3 mapper.py reference.fasta reads.fasta output.txt`
+
+**Usage via Snakemake**
+>`snakemake --cores 1`
 
 ## Assembler
 
@@ -17,3 +20,6 @@ Performs de novo assembly of high-throughput sequencing reads into longer contig
 
 Usage
 >`./assembly input_reads.fasta output_contigs.fasta`
+
+**Usage via Snakemake**
+>`snakemake --cores 1`
