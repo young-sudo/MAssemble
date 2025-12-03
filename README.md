@@ -1,8 +1,15 @@
-# _MAssemble_ (Mapper and Assembler)
+# htskit-mini
 
-**Algorithms for Sequencing Data - an implementation of a basic mapping and assembly algorithm for high-throughput sequencing data**
+**Algorithms for High-Throughput Sequencing Data - a lightweight implementation of a basic mapping and assembly algorithms from scratch in python**
 
 Younginn Park
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Biopython](https://img.shields.io/badge/Biopython-0096D8?style=for-the-badge&logo=python&logoColor=white)
+![Snakemake](https://img.shields.io/badge/Snakemake-333333?style=for-the-badge&logo=python&logoColor=white)
+![Nextflow](https://img.shields.io/badge/Nextflow-23CC85?style=for-the-badge&logo=nextflow&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Apptainer](https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white)
 
 ## Mapper
 
