@@ -1,6 +1,6 @@
 # htskit-mini
 
-**Algorithms for High-Throughput Sequencing Data - a lightweight implementation of a basic mapping and assembly algorithms from scratch in python**
+**Algorithms for High-Throughput Sequencing Data - a lightweight implementation of a basic mapping and assembly algorithms from scratch in Python**
 
 Younginn Park
 
@@ -10,6 +10,43 @@ Younginn Park
 ![Nextflow](https://img.shields.io/badge/Nextflow-23CC85?style=for-the-badge&logo=nextflow&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Apptainer](https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white)
+
+
+
+## Usage
+
+Clone the repository:
+
+```bash
+git clone https://github.com/young-sudo/htskit-mini.git
+cd htskit-mini
+```
+
+### Via Snakemake
+```bash
+snakemake --config mode=mapper
+```
+**Available modes:**  
+The `mode` parameter accepts two options: `mapper` or `assembler`.  
+Use `mode=mapper` to run the read-mapping workflow, or  
+`mode=assembler` to run the *de-novo* assembly workflow.
+
+#### (Optional) Define parameters
+
+The default parameters are:
+
+```bash
+snakemake \
+  --config mode=mapper \
+  input_reference=data/reference.fasta \
+  input_reads=data/reads.fasta \
+  output_mapping=results/output.txt
+```
+
+### Via Nextflow
+
+
+
 
 ## Mapper
 
@@ -37,12 +74,11 @@ The NGS mapper uses an **FM-index-based approach** for efficient sequence alignm
 
 This approach allows fast and memory-efficient mapping of sequencing reads to the reference genome using the FM-index for indexing and Smith-Waterman for accurate local alignment.
 
+You can run the mapper directly:
 
-**Usage**
->`python3 mapper.py reference.fasta reads.fasta output.txt`
-
-**Usage via Snakemake**
->`snakemake --cores 1`
+```bash
+python3 mapper.py reference.fasta reads.fasta output.txt
+```
 
 ## Assembler
 
@@ -77,7 +113,6 @@ This greedy, count-based approach allows building contigs efficiently while avoi
 
 
 Usage
->`./assembly input_reads.fasta output_contigs.fasta`
-
-**Usage via Snakemake**
->`snakemake --cores 1`
+```bash
+./assembly input_reads.fasta output_contigs.fasta
+```

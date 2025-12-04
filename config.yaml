@@ -1,0 +1,10 @@
+# "mapper" or "assembler"
+mode: "mapper"
+
+# Inputs
+input_reference: "data/reference.fasta"
+input_reads: "data/reads.fasta"
+
+# Outputs
+output_mapping: "results/output.txt"
+output_contigs: "results/output_contigs.fasta"
