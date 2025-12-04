@@ -15,6 +15,21 @@ Younginn Park
 
 ## Usage
 
+To run the workflow **via Snakemake**, install it first (Conda recommended):
+
+```bash
+conda install -c bioconda -c conda-forge snakemake
+```
+
+Alternatively, install via pip:
+
+```bash
+pip install snakemake
+```
+
+
+
+
 Clone the repository:
 
 ```bash
@@ -22,14 +37,16 @@ git clone https://github.com/young-sudo/htskit-mini.git
 cd htskit-mini
 ```
 
-### Via Snakemake
+### Run with Snakemake
+
 ```bash
 snakemake --config mode=mapper
 ```
-**Available modes:**  
-The `mode` parameter accepts two options: `mapper` or `assembler`.  
-Use `mode=mapper` to run the read-mapping workflow, or  
-`mode=assembler` to run the *de-novo* assembly workflow.
+
+**Available modes:**
+The `mode` parameter accepts two options: `mapper` or `assembler`
+- `mode=mapper` to run the read-mapping workflow
+- `mode=assembler` to run the *de-novo* assembly workflow
 
 #### (Optional) Define parameters
 
@@ -45,8 +62,9 @@ snakemake \
 
 ### Via Nextflow
 
+```bash
 
-
+```
 
 ## Mapper
 
