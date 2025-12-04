@@ -48,12 +48,15 @@ The `mode` parameter accepts two options: `mapper` or `assembler`
 - `mode=mapper` to run the read-mapping workflow
 - `mode=assembler` to run the *de-novo* assembly workflow
 
+Use parameter `--use-conda` to automatically create and use the Conda environment defined in the Snakefile or `env.yml` when running the workflow.
+
 #### (Optional) Define parameters
 
 The default parameters are:
 
 ```bash
 snakemake \
+  --use-conda \
   --config mode=mapper \
   input_reference=data/reference.fasta \
   input_reads=data/reads.fasta \
