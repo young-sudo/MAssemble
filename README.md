@@ -1,6 +1,6 @@
 # htskit-mini
 
-**Algorithms for High-Throughput Sequencing Data - a lightweight implementation of a basic mapping and assembly algorithms from scratch in Python**
+**Algorithms for High-Throughput DNA Sequencing Data - a lightweight implementation of a basic mapping and assembly algorithms from scratch in Python**
 
 Younginn Park
 
