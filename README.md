@@ -11,9 +11,16 @@ Younginn Park
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Apptainer](https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white)
 
-
-
 ## Usage
+
+Clone the repository:
+
+```bash
+git clone https://github.com/young-sudo/htskit-mini.git
+cd htskit-mini
+```
+
+### Run with Snakemake
 
 To run the workflow **via Snakemake**, install it first (Conda recommended):
 
@@ -27,17 +34,7 @@ Alternatively, install via pip:
 pip install snakemake
 ```
 
-
-
-
-Clone the repository:
-
-```bash
-git clone https://github.com/young-sudo/htskit-mini.git
-cd htskit-mini
-```
-
-### Run with Snakemake
+**Basic run:**
 
 ```bash
 snakemake --config mode=mapper
@@ -63,7 +60,7 @@ snakemake \
   output_mapping=results/output.txt
 ```
 
-### Via Nextflow
+### Run with Nextflow
 
 ```bash
 
